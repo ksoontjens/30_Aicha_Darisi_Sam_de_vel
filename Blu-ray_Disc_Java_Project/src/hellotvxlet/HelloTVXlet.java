@@ -11,17 +11,29 @@ import java.awt.event.ActionEvent;
 
 public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
 {
+    int initx = 0;
+    int inity = 0;
+    
+    int rows = 32;
+    int cols = 32;
+    int squaresize = 18;
+    
+    int initsnakelength = 10;
+    int snakelength = initsnakelength;
+    int score = 0;
+    int direction = 3;
+    
     
     //classes
-    Grid[] grid;
     Block[] snake;
+    Grid[] grid;
     Block food;
 
         
     //MHP Stuff
     private HScene scene;
     private HStaticText lblPoints = new HStaticText("score: 0");  
-    private HStaticText lblGrid[] = new HStaticText[4096];
+    private HStaticText lblGrid[] = new HStaticText[rows*cols];
     private HTextButton resetbutton = new HTextButton("reset");
     
     Font myfont = new Font("Serif", Font.BOLD, 22);    
@@ -29,6 +41,7 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     DVBColor backgroundcolor = new DVBColor(new DVBColor(0,100,0,255));
     DVBColor snakecolor = new DVBColor(new DVBColor (0,0,0,255));
     DVBColor foodcolor = new DVBColor(new DVBColor (0,0,0,255));
+    DVBColor gridcolor = new DVBColor(new DVBColor(0,150,0,255));
     
     
     
@@ -59,15 +72,23 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         scene.add(lblPoints);
         
         //init grid
-        for(int i = 0; i < 4096; i ++)
+        for(int i = 0; i < rows*cols; i ++)
         {
-        lblGrid[i] = new HStaticText("");
-        lblGrid[i].setSize(10,10);
+            lblGrid[i] = new HStaticText("");
+            lblGrid[i].setSize(squaresize-1,squaresize-1);
         
-        lblGrid[i].setLocation(0,0);
+            lblGrid[i].setLocation(initx,inity);
         
-        lblGrid[i].setBackground(backgroundcolor);
-        lblGrid[i].setBackgroundMode(HVisible.BACKGROUND_FILL);
+        
+            initx += squaresize;
+
+                if(initx >= cols * squaresize)
+                {
+                    inity += squaresize;
+                    initx = 0;
+                }
+             lblGrid[i].setBackground(gridcolor);
+             lblGrid[i].setBackgroundMode(HVisible.BACKGROUND_FILL);
         lblGrid[i].setForeground(new DVBColor(0,0,0,255));
         lblGrid[i].setFont(myfont);        
         scene.add(lblGrid[i]);
@@ -82,6 +103,29 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         resetbutton.setActionCommand("resetbutton");
         resetbutton.addHActionListener(this);
         
+        //init virtual grid
+        initx = 0;
+        inity = 0;
+        grid = new Grid[cols*rows];
+        for (int i = 0; i < grid.length; i++)
+        {
+            grid[i] = new Grid(initx,inity);
+            initx += squaresize;
+
+                if(initx >= cols * squaresize)
+                {
+                    inity += squaresize;
+                    initx = 0;
+                }
+        }
+        
+        //init snake
+        snake = new Block[cols*rows];
+
+        for (int i = 0; i < snakelength; i++)
+        {
+            snake[i] = new Block((squaresize+(i*squaresize)) + (cols*squaresize)/2, (rows*squaresize)/2);
+        }
       
         
         UserEventRepository uev = new UserEventRepository("mijn verzameling");
@@ -95,11 +139,126 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     {
         scene.validate();
         scene.setVisible(true);
+        Update();
+        Paint();
     }
+    
+    public void Update ()
+    {
+        System.out.println("update begin");
+         {
+        switch (direction) //move snake
+            {
+                case 0:
+                    for (int i = snakelength - 1; i >= 1; i--) //reverse loop: set bodypart to location of bodypart before it
+                    {
+                        snake[i].x = snake[i - 1].x;
+                        snake[i].y = snake[i - 1].y;
+                    }
+                    snake[0].y -= squaresize; //move snakehead in right direction
+
+                    break;
+                    case 1:
+                    for (int i = snakelength - 1; i >= 1; i--)
+                    {
+                        snake[i].x = snake[i - 1].x;
+                        snake[i].y = snake[i - 1].y;
+                    }
+                    snake[0].x += squaresize;
+
+                    break;
+                case 2:
+                    for (int i = snakelength - 1; i >= 1; i--)
+                    {
+                        snake[i].x = snake[i - 1].x;
+                        snake[i].y = snake[i - 1].y;
+                    }
+                    snake[0].y += squaresize;
+
+                    break;
+                case 3:
+                    for (int i = snakelength - 1; i >= 1; i--)
+                    {
+                        snake[i].x = snake[i - 1].x;
+                        snake[i].y = snake[i - 1].y;
+                    }
+                    snake[0].x -= squaresize;
+
+                    break;
+                
+            }
+            
+            //check if snake is on itself -> game over
+            for (int i = 1; i < snakelength; i++)
+            {
+                if (snake[0].x == snake[i].x && snake[0].y == snake[i].y)
+                {
+                    // snake is on it self
+                }
+            }
+
+            //check if snakehead is on food
+           
+            
+            //loop snake when out of grid
+            for (int i = 0; i < snakelength; i++)
+            {
+                if (snake[i].x < 0)
+                {
+                    snake[i].x = cols*squaresize - squaresize;
+                }
+
+                if (snake[i].y < 0)
+                {
+                    snake[i].y = rows*squaresize - squaresize;
+                }
+
+                if (snake[i].x >= cols*squaresize)
+                {
+                    snake[i].x = 0;
+                }
+
+                if (snake[i].y >= rows*squaresize)
+                {
+                    snake[i].y = 0;
+                }
+            }
+          
+            //update speed according to score
+            
+            }
+         System.out.println("update einde");
+    }       
     
     public void Paint()
     {
-       
+         System.out.println("paint begin");
+        for (int i = 0; i < grid.length; i++)
+            {
+                //put snake on grid
+                boolean showsnake = false;
+                for (int j = 0; j < snakelength; j++)
+		{
+                    if(grid[i].x == snake[j].x && grid[i].y == snake[j].y)
+                    {
+                        showsnake = true;
+                    }
+		}
+               
+                if(showsnake) // snake
+                {
+                    grid[i].issnake = true;
+                    lblGrid[i].setBackground(snakecolor);
+
+                }
+                else
+                {
+                    
+                    lblGrid[i].setTextContent("", HVisible.NORMAL_STATE);
+                    lblGrid[i].setBackground(gridcolor);
+                }
+            }
+          System.out.println("paint einde");
     }
     
     public void Reset()
