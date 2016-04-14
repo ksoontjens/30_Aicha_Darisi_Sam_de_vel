@@ -126,6 +126,9 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         {
             snake[i] = new Block((squaresize+(i*squaresize)) + (cols*squaresize)/2, (rows*squaresize)/2);
         }
+        
+        //initialize food
+        food = new Block(0, 0);
       
         
         UserEventRepository uev = new UserEventRepository("mijn verzameling");
@@ -198,7 +201,16 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
             }
 
             //check if snakehead is on food
-           
+           if (snake[0].x == food.x && snake[0].y == food.y)
+            {
+                Spawnfood();
+                score++;
+                snakelength++;
+                lblPoints.setTextContent("score: " + Integer.toString(score),HVisible.NORMAL_STATE);
+                snake[snakelength - 1] = new Block(snake[snakelength - 2].x, snake[snakelength - 2].y);
+                    //initialize next bodypart (location will be right in next updatecyce)
+
+            }
             
             //loop snake when out of grid
             for (int i = 0; i < snakelength; i++)
@@ -250,6 +262,12 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                     grid[i].issnake = true;
                     lblGrid[i].setBackground(snakecolor);
 
+                }
+                 else if(food.x == grid[i].x && food.y == grid[i].y)
+                {
+                    grid[i].isfood = true;
+                    lblGrid[i].setTextContent("X", HVisible.NORMAL_STATE);
+                    lblGrid[i].setBackground(foodcolor);
                 }
                 else
                 {
@@ -310,6 +328,26 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         }
     }
    
+    public void Spawnfood()
+    {
+        boolean spawnable = false;
+           while(!spawnable)
+           {
+               //put food somewhere random
+               food.x = squaresize * (int)(Math.random()* cols);
+               food.y = squaresize * (int)(Math.random()* rows);
+
+               spawnable = true;
+               for (int i = 0; i < snakelength; i++)
+               {
+                   //if food is on snake, do loop again
+                   if (food.x == snake[i].x && food.y == snake[i].y)
+                   {
+                       spawnable = false;
+                   }
+               }
+           }
+    }
     
     
 }
