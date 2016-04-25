@@ -7,6 +7,7 @@ import org.havi.ui.*;
 import org.havi.ui.event.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Timer;
 
 
 public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
@@ -22,7 +23,13 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     int snakelength = initsnakelength;
     int score = 0;
     int direction = 3;
+   
+    int intervalat = 500; //ms
+    int counttointerval = 0;
+    int timerinterval = 100;
     
+    boolean holdkey = false;
+    boolean holdtimer = false;
     
     //classes
     Block[] snake;
@@ -42,7 +49,8 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     DVBColor snakecolor = new DVBColor(new DVBColor (0,0,0,255));
     DVBColor foodcolor = new DVBColor(new DVBColor (0,0,0,255));
     DVBColor gridcolor = new DVBColor(new DVBColor(0,150,0,255));
-    
+   
+    Timer t;
     
     
     
@@ -135,6 +143,10 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         uev.addAllArrowKeys();
         EventManager.getInstance().addUserEventListener(this, uev);
         
+         t = new Timer();
+        tmrGame mtt = new tmrGame();
+        mtt.setCallback(this);
+        t.scheduleAtFixedRate(mtt,0,timerinterval);
        
         
     }
@@ -142,8 +154,6 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     {
         scene.validate();
         scene.setVisible(true);
-        Update();
-        Paint();
     }
     
     public void Update ()
@@ -283,6 +293,23 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     {
        
     }
+    
+     public void callback()
+    {
+            
+            //mechanism to control updatespeed
+            if(counttointerval < intervalat) //wait for next update
+            {
+                counttointerval += timerinterval;
+            }
+
+            if (counttointerval >= intervalat && !holdtimer) //update now
+            {
+                Update();
+                counttointerval = 0;
+            }
+            Paint(); // update picbox even if not updated
+    }
 
     public void pauseXlet() {
      System.out.println("pauseXlet");
@@ -299,18 +326,36 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
             {
                  case HRcEvent.VK_UP:
                     
-                   
+                    if(direction != 2)
+                    {
+                    direction = 0;
+                    holdkey = true;
+                    }
                     break;
                     
                 case HRcEvent.VK_DOWN:
-                    
+                    if(direction != 0)
+                    {
+                    direction = 2;
+                    holdkey = true;
+                    }
                     break;
                 
                 case HRcEvent.VK_LEFT:
-                    
+                    holdkey = true;
+                    if(direction != 1)
+                    {
+                    direction = 3;
+                    holdkey = true;
+                    }
                     break;
                 case HRcEvent.VK_RIGHT:
-                   
+                    holdkey = true;
+                    if(direction != 3)
+                    {
+                    direction = 1;
+                    holdkey = true;
+                    }
                     break;
                
             }
