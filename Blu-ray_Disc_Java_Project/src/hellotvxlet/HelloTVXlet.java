@@ -95,8 +95,8 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                     inity += squaresize;
                     initx = 0;
                 }
-             lblGrid[i].setBackground(gridcolor);
-             lblGrid[i].setBackgroundMode(HVisible.BACKGROUND_FILL);
+        lblGrid[i].setBackground(gridcolor);
+        lblGrid[i].setBackgroundMode(HVisible.BACKGROUND_FILL);
         lblGrid[i].setForeground(new DVBColor(0,0,0,255));
         lblGrid[i].setFont(myfont);        
         scene.add(lblGrid[i]);
@@ -138,7 +138,7 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         //initialize food
         food = new Block(0, 0);
       
-        
+        Spawnfood();
         UserEventRepository uev = new UserEventRepository("mijn verzameling");
         uev.addAllArrowKeys();
         EventManager.getInstance().addUserEventListener(this, uev);
@@ -207,6 +207,7 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                 if (snake[0].x == snake[i].x && snake[0].y == snake[i].y)
                 {
                     // snake is on it self
+                    holdtimer = true;
                 }
             }
 
@@ -247,7 +248,40 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
             }
           
             //update speed according to score
-            
+            holdkey = false;
+            switch (score)
+            {
+                case 0:
+                    intervalat = 300;
+                    break;
+                case 5:
+                    intervalat = 275;
+                    break;
+                case 10:
+                    intervalat = 250;
+                    break;
+                case 15:
+                    intervalat = 225;
+                    break;
+                case 20:
+                    intervalat = 200;
+                    break;
+                case 30:
+                    intervalat = 150;
+                    break;
+                case 40:
+                    intervalat = 100;
+                    break;
+                case 50:
+                    intervalat = 50;
+                    break;
+                case 100:
+                    intervalat = 30;
+                    break;
+                case 500:
+                    intervalat = timerinterval; //fastest possible
+                    break;
+            }
             }
          System.out.println("update einde");
     }       
@@ -281,7 +315,7 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                 }
                 else
                 {
-                    
+                    grid[i].isfood = false;
                     lblGrid[i].setTextContent("", HVisible.NORMAL_STATE);
                     lblGrid[i].setBackground(gridcolor);
                 }
@@ -291,25 +325,22 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     
     public void Reset()
     {
-       
-    }
-    
-     public void callback()
-    {
-            
-            //mechanism to control updatespeed
-            if(counttointerval < intervalat) //wait for next update
+       snakelength = initsnakelength; //snakelenght to initial value
+
+            for (int i = 0; i < snakelength; i++)
             {
-                counttointerval += timerinterval;
+                //snake to start position
+                snake[i] = new Block((squaresize + (i * squaresize)) + (cols*squaresize) / 2, (rows*squaresize) / 2);
             }
 
-            if (counttointerval >= intervalat && !holdtimer) //update now
-            {
-                Update();
-                counttointerval = 0;
-            }
-            Paint(); // update picbox even if not updated
+            Spawnfood();
+            //reset score, direction
+            score = 0;
+            direction = 3;
+            holdtimer = false;
     }
+    
+   
 
     public void pauseXlet() {
      System.out.println("pauseXlet");
@@ -363,13 +394,28 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
             }
             
         }
-    
+      public void callback()
+    {
+            
+            //mechanism to control updatespeed
+            if(counttointerval < intervalat) //wait for next update
+            {
+                counttointerval += timerinterval;
+            }
+
+            if (counttointerval >= intervalat && !holdtimer) //update now
+            {
+                Update();
+                counttointerval = 0;
+            }
+            Paint(); // update picbox even if not updated
+    }
     
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getActionCommand() == "resetbutton")
         {
-          //Reset();
+          Reset();
         }
     }
    
