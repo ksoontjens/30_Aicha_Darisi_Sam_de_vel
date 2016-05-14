@@ -22,6 +22,7 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
     int initsnakelength = 10;
     int snakelength = initsnakelength;
     int score = 0;
+    int highscore = 0;
     int direction = 3;
    
     int intervalat = 500; //ms
@@ -39,7 +40,8 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         
     //MHP Stuff
     private HScene scene;
-    private HStaticText lblPoints = new HStaticText("score: 0");  
+    private HStaticText lblPoints = new HStaticText("score: 0");
+    private HStaticText lblHighscore = new HStaticText("");
     private HStaticText lblGrid[] = new HStaticText[rows*cols];
     private HTextButton resetbutton = new HTextButton("reset");
     
@@ -78,6 +80,14 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
         lblPoints.setBackgroundMode(HVisible.BACKGROUND_FILL);
         lblPoints.setFont(myfont);        
         scene.add(lblPoints);
+        
+        //init lblHighscore
+        lblHighscore.setSize(125,40);
+        lblHighscore.setLocation(585,130);
+        lblHighscore.setBackground(new DVBColor(255,255,255,0));
+        lblHighscore.setBackgroundMode(HVisible.BACKGROUND_FILL);
+        lblHighscore.setFont(myfont);        
+        scene.add(lblHighscore);
         
         //init grid
         for(int i = 0; i < rows*cols; i ++)
@@ -208,6 +218,11 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                 {
                     // snake is on it self
                     holdtimer = true;
+                    if(score >= highscore)
+                    {
+                       highscore = score;
+                       lblHighscore.setTextContent("Highscore: " + Integer.toString(highscore),HVisible.NORMAL_STATE);
+                    }
                 }
             }
 
@@ -217,7 +232,6 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                 Spawnfood();
                 score++;
                 snakelength++;
-                lblPoints.setTextContent("score: " + Integer.toString(score),HVisible.NORMAL_STATE);
                 snake[snakelength - 1] = new Block(snake[snakelength - 2].x, snake[snakelength - 2].y);
                     //initialize next bodypart (location will be right in next updatecyce)
 
@@ -283,7 +297,8 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
                     break;
             }
             }
-         System.out.println("update einde");
+        lblPoints.setTextContent("score: " + Integer.toString(score),HVisible.NORMAL_STATE);
+        System.out.println("update einde");
     }       
     
     public void Paint()
@@ -338,6 +353,8 @@ public class HelloTVXlet  implements Xlet, UserEventListener, HActionListener
             score = 0;
             direction = 3;
             holdtimer = false;
+            
+            Update();
     }
     
    
