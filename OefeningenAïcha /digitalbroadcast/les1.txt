@@ -1,0 +1,1317 @@
+Last login: Tue Dec  1 08:27:59 on ttys000
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ java
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ nkdir
+-bash: nkdir: command not found
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ cd
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ cd/Program Files/Java/jdk.1.6.0_07/bin
+-bash: cd/Program: No such file or directory
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ javac
+Usage: javac <options> <source files>
+where possible options include:
+  -g                         Generate all debugging info
+  -g:none                    Generate no debugging info
+  -g:{lines,vars,source}     Generate only some debugging info
+  -nowarn                    Generate no warnings
+  -verbose                   Output messages about what the compiler is doing
+  -deprecation               Output source locations where deprecated APIs are used
+  -classpath <path>          Specify where to find user class files and annotation processors
+  -cp <path>                 Specify where to find user class files and annotation processors
+  -sourcepath <path>         Specify where to find input source files
+  -bootclasspath <path>      Override location of bootstrap class files
+  -extdirs <dirs>            Override location of installed extensions
+  -endorseddirs <dirs>       Override location of endorsed standards path
+  -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+  -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+  -processorpath <path>      Specify where to find annotation processors
+  -parameters                Generate metadata for reflection on method parameters
+  -d <directory>             Specify where to place generated class files
+  -s <directory>             Specify where to place generated source files
+  -h <directory>             Specify where to place generated native header files
+  -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+  -encoding <encoding>       Specify character encoding used by source files
+  -source <release>          Provide source compatibility with specified release
+  -target <release>          Generate class files for specific VM version
+  -profile <profile>         Check that API used is available in the specified profile
+  -version                   Version information
+  -help                      Print a synopsis of standard options
+  -Akey[=value]              Options to pass to annotation processors
+  -X                         Print a synopsis of nonstandard options
+  -J<flag>                   Pass <flag> directly to the runtime system
+  -Werror                    Terminate compilation if warnings occur
+  @<filename>                Read options and filenames from file
+
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ javac
+Usage: javac <options> <source files>
+where possible options include:
+  -g                         Generate all debugging info
+  -g:none                    Generate no debugging info
+  -g:{lines,vars,source}     Generate only some debugging info
+  -nowarn                    Generate no warnings
+  -verbose                   Output messages about what the compiler is doing
+  -deprecation               Output source locations where deprecated APIs are used
+  -classpath <path>          Specify where to find user class files and annotation processors
+  -cp <path>                 Specify where to find user class files and annotation processors
+  -sourcepath <path>         Specify where to find input source files
+  -bootclasspath <path>      Override location of bootstrap class files
+  -extdirs <dirs>            Override location of installed extensions
+  -endorseddirs <dirs>       Override location of endorsed standards path
+  -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+  -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+  -processorpath <path>      Specify where to find annotation processors
+  -parameters                Generate metadata for reflection on method parameters
+  -d <directory>             Specify where to place generated class files
+  -s <directory>             Specify where to place generated source files
+  -h <directory>             Specify where to place generated native header files
+  -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+  -encoding <encoding>       Specify character encoding used by source files
+  -source <release>          Provide source compatibility with specified release
+  -target <release>          Generate class files for specific VM version
+  -profile <profile>         Check that API used is available in the specified profile
+  -version                   Version information
+  -help                      Print a synopsis of standard options
+  -Akey[=value]              Options to pass to annotation processors
+  -X                         Print a synopsis of nonstandard options
+  -J<flag>                   Pass <flag> directly to the runtime system
+  -Werror                    Terminate compilation if warnings occur
+  @<filename>                Read options and filenames from file
+
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ mkdir digitalbroadcast
+MacBook-Pro-van-Darsisi:~ darsisiaicha$ cd digitalbroadcast
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ path %path%;"C:\Program Files\Java\jdk1.6.0_07\bin"
+-bash: path: command not found
+-bash: C:\Program Files\Java\jdk1.6.0_07\bin: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ path
+-bash: path: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac
+Usage: javac <options> <source files>
+where possible options include:
+  -g                         Generate all debugging info
+  -g:none                    Generate no debugging info
+  -g:{lines,vars,source}     Generate only some debugging info
+  -nowarn                    Generate no warnings
+  -verbose                   Output messages about what the compiler is doing
+  -deprecation               Output source locations where deprecated APIs are used
+  -classpath <path>          Specify where to find user class files and annotation processors
+  -cp <path>                 Specify where to find user class files and annotation processors
+  -sourcepath <path>         Specify where to find input source files
+  -bootclasspath <path>      Override location of bootstrap class files
+  -extdirs <dirs>            Override location of installed extensions
+  -endorseddirs <dirs>       Override location of endorsed standards path
+  -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+  -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+  -processorpath <path>      Specify where to find annotation processors
+  -parameters                Generate metadata for reflection on method parameters
+  -d <directory>             Specify where to place generated class files
+  -s <directory>             Specify where to place generated source files
+  -h <directory>             Specify where to place generated native header files
+  -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+  -encoding <encoding>       Specify character encoding used by source files
+  -source <release>          Provide source compatibility with specified release
+  -target <release>          Generate class files for specific VM version
+  -profile <profile>         Check that API used is available in the specified profile
+  -version                   Version information
+  -help                      Print a synopsis of standard options
+  -Akey[=value]              Options to pass to annotation processors
+  -X                         Print a synopsis of nonstandard options
+  -J<flag>                   Pass <flag> directly to the runtime system
+  -Werror                    Terminate compilation if warnings occur
+  @<filename>                Read options and filenames from file
+
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java
+Usage: java [-options] class [args...]
+           (to execute a class)
+   or  java [-options] -jar jarfile [args...]
+           (to execute a jar file)
+where options include:
+    -d32	  use a 32-bit data model if available
+    -d64	  use a 64-bit data model if available
+    -server	  to select the "server" VM
+                  The default VM is server,
+                  because you are running on a server-class machine.
+
+
+    -cp <class search path of directories and zip/jar files>
+    -classpath <class search path of directories and zip/jar files>
+                  A : separated list of directories, JAR archives,
+                  and ZIP archives to search for class files.
+    -D<name>=<value>
+                  set a system property
+    -verbose:[class|gc|jni]
+                  enable verbose output
+    -version      print product version and exit
+    -version:<value>
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  require the specified version to run
+    -showversion  print product version and continue
+    -jre-restrict-search | -no-jre-restrict-search
+                  Warning: this feature is deprecated and will be removed
+                  in a future release.
+                  include/exclude user private JREs in the version search
+    -? -help      print this help message
+    -X            print help on non-standard options
+    -ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
+    -da[:<packagename>...|:<classname>]
+    -disableassertions[:<packagename>...|:<classname>]
+                  disable assertions with specified granularity
+    -esa | -enablesystemassertions
+                  enable system assertions
+    -dsa | -disablesystemassertions
+                  disable system assertions
+    -agentlib:<libname>[=<options>]
+                  load native agent library <libname>, e.g. -agentlib:hprof
+                  see also, -agentlib:jdwp=help and -agentlib:hprof=help
+    -agentpath:<pathname>[=<options>]
+                  load native agent library by full pathname
+    -javaagent:<jarpath>[=<options>]
+                  load Java programming language agent, see java.lang.instrument
+    -splash:<imagepath>
+                  show splash screen with specified image
+See http://www.oracle.com/technetwork/java/javase/documentation/index.html for more details.
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac
+Usage: javac <options> <source files>
+where possible options include:
+  -g                         Generate all debugging info
+  -g:none                    Generate no debugging info
+  -g:{lines,vars,source}     Generate only some debugging info
+  -nowarn                    Generate no warnings
+  -verbose                   Output messages about what the compiler is doing
+  -deprecation               Output source locations where deprecated APIs are used
+  -classpath <path>          Specify where to find user class files and annotation processors
+  -cp <path>                 Specify where to find user class files and annotation processors
+  -sourcepath <path>         Specify where to find input source files
+  -bootclasspath <path>      Override location of bootstrap class files
+  -extdirs <dirs>            Override location of installed extensions
+  -endorseddirs <dirs>       Override location of endorsed standards path
+  -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+  -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+  -processorpath <path>      Specify where to find annotation processors
+  -parameters                Generate metadata for reflection on method parameters
+  -d <directory>             Specify where to place generated class files
+  -s <directory>             Specify where to place generated source files
+  -h <directory>             Specify where to place generated native header files
+  -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+  -encoding <encoding>       Specify character encoding used by source files
+  -source <release>          Provide source compatibility with specified release
+  -target <release>          Generate class files for specific VM version
+  -profile <profile>         Check that API used is available in the specified profile
+  -version                   Version information
+  -help                      Print a synopsis of standard options
+  -Akey[=value]              Options to pass to annotation processors
+  -X                         Print a synopsis of nonstandard options
+  -J<flag>                   Pass <flag> directly to the runtime system
+  -Werror                    Terminate compilation if warnings occur
+  @<filename>                Read options and filenames from file
+
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ cd digitalbroadcast
+-bash: cd: digitalbroadcast: No such file or directory
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ notepad EerstePorg.java
+-bash: notepad: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ Notepad EersteProg.java
+-bash: Notepad: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ >Notepad EersteProg.java
+-bash: EersteProg.java: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ >notepad EersteProg.java
+-bash: EersteProg.java: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ notepad EersteProg.java
+-bash: notepad: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ texteditor EersteProg.java
+-bash: texteditor: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ teksteditor EersteProg.java
+-bash: teksteditor: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ pico EersteProg.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac
+Usage: javac <options> <source files>
+where possible options include:
+  -g                         Generate all debugging info
+  -g:none                    Generate no debugging info
+  -g:{lines,vars,source}     Generate only some debugging info
+  -nowarn                    Generate no warnings
+  -verbose                   Output messages about what the compiler is doing
+  -deprecation               Output source locations where deprecated APIs are used
+  -classpath <path>          Specify where to find user class files and annotation processors
+  -cp <path>                 Specify where to find user class files and annotation processors
+  -sourcepath <path>         Specify where to find input source files
+  -bootclasspath <path>      Override location of bootstrap class files
+  -extdirs <dirs>            Override location of installed extensions
+  -endorseddirs <dirs>       Override location of endorsed standards path
+  -proc:{none,only}          Control whether annotation processing and/or compilation is done.
+  -processor <class1>[,<class2>,<class3>...] Names of the annotation processors to run; bypasses default discovery process
+  -processorpath <path>      Specify where to find annotation processors
+  -parameters                Generate metadata for reflection on method parameters
+  -d <directory>             Specify where to place generated class files
+  -s <directory>             Specify where to place generated source files
+  -h <directory>             Specify where to place generated native header files
+  -implicit:{none,class}     Specify whether or not to generate class files for implicitly referenced files
+  -encoding <encoding>       Specify character encoding used by source files
+  -source <release>          Provide source compatibility with specified release
+  -target <release>          Generate class files for specific VM version
+  -profile <profile>         Check that API used is available in the specified profile
+  -version                   Version information
+  -help                      Print a synopsis of standard options
+  -Akey[=value]              Options to pass to annotation processors
+  -X                         Print a synopsis of nonstandard options
+  -J<flag>                   Pass <flag> directly to the runtime system
+  -Werror                    Terminate compilation if warnings occur
+  @<filename>                Read options and filenames from file
+
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac EersteProg.java
+EersteProg.java:2: error: ')' expected
+	public static void main (String arg[]}
+	                                     ^
+EersteProg.java:6: error: class, interface, or enum expected
+	System.out.println("Hello World");
+	^
+EersteProg.java:7: error: class, interface, or enum expected
+	}
+	^
+3 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nana EersteProg.java
+-bash: nana: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano EersteProg.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac EersteProg.java
+EersteProg.java:3: error: ')' expected
+	public static void main (String arg[]{
+	                                     ^
+EersteProg.java:7: error: <identifier> expected
+	System.out.println("Hello World");
+	                  ^
+EersteProg.java:7: error: illegal start of type
+	System.out.println("Hello World");
+	                   ^
+EersteProg.java:10: error: class, interface, or enum expected
+}
+^
+4 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nana EersteProg.java
+-bash: nana: command not found
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano EersteProg.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac EersteProg.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java EersteProg
+Hello World
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano TweedeOefCom.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac TweedeOefCom.java
+TweedeOefCom.java:3: error: '{' expected
+public class TweedeOefCom.java {
+                         ^
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano TweedeOefCom.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano TweedeOefCom.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac TweedeOefCom.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java TweedeOefCom
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano TweedeOefCom.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac TweedeOefCom.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java TweedeoefCom
+Error: Could not find or load main class TweedeoefCom
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java TweedeOefCom
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javadoc TweedeOefCom.java"author
+> 
+> 
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javadoc TweedeOefCom.java-author
+javadoc: error - Illegal package name: "TweedeOefCom.java-author"
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javadoc TweedeOefCom.java -author
+Loading source file TweedeOefCom.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_65
+Building tree for all the packages and classes...
+Generating ./TweedeOefCom.html...
+TweedeOefCom.java:8: warning: no @param for args
+	public static void main (String args [])
+	                   ^
+Generating ./package-frame.html...
+Generating ./package-summary.html...
+Generating ./package-tree.html...
+Generating ./constant-values.html...
+Building index for all the packages and classes...
+Generating ./overview-tree.html...
+Generating ./index-all.html...
+Generating ./deprecated-list.html...
+Building index for all classes...
+Generating ./allclasses-frame.html...
+Generating ./allclasses-noframe.html...
+Generating ./index.html...
+Generating ./help-doc.html...
+1 warning
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+OmzettenWhile.java:16: error: reached end of file while parsing
+}
+ ^
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+OmzettenWhile.java:5: error: cannot find symbol
+	for (i=55; i>34;i--)
+	     ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:5: error: cannot find symbol
+	for (i=55; i>34;i--)
+	           ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:5: error: cannot find symbol
+	for (i=55; i>34;i--)
+	                ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:7: error: cannot find symbol
+		System.out.println(i);
+		                   ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:10: error: cannot find symbol
+	d= 55;
+	^
+  symbol:   variable d
+  location: class OmzettenWhile
+OmzettenWhile.java:11: error: cannot find symbol
+	while (d>34)
+	       ^
+  symbol:   variable d
+  location: class OmzettenWhile
+OmzettenWhile.java:13: error: cannot find symbol
+		d--;
+		^
+  symbol:   variable d
+  location: class OmzettenWhile
+OmzettenWhile.java:14: error: cannot find symbol
+		System.out.println(d);
+		                   ^
+  symbol:   variable d
+  location: class OmzettenWhile
+8 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+OmzettenWhile.java:13: error: ';' expected
+             int d--;
+                  ^
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+OmzettenWhile.java:5: error: cannot find symbol
+	for (i=55; i>34;i--)
+	     ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:5: error: cannot find symbol
+	for (i=55; i>34;i--)
+	           ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:5: error: cannot find symbol
+	for (i=55; i>34;i--)
+	                ^
+  symbol:   variable i
+  location: class OmzettenWhile
+OmzettenWhile.java:7: error: cannot find symbol
+		System.out.println(i);
+		                   ^
+  symbol:   variable i
+  location: class OmzettenWhile
+4 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java OmzettenWhile
+55
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+40
+39
+38
+37
+36
+35
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+40
+39
+38
+37
+36
+35
+34
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java OmzettenWhile
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+40
+39
+38
+37
+36
+35
+34
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac OmzettenWhile.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java OmzettenWhile
+55
+54
+53
+52
+51
+50
+49
+48
+47
+46
+45
+44
+43
+42
+41
+40
+39
+38
+37
+36
+35
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano Berekening.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac Berekening.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java Berekening
+-201
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano Berekening.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac Berekening.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java Berekening
+-11
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano 17(1).java
+-bash: syntax error near unexpected token `('
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef1.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef1.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef1.java
+Error: Could not find or load main class oef1.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef1
+0x0=00
+0x1=01
+0x2=02
+0x3=03
+0x4=04
+0x5=05
+0x6=06
+0x7=07
+0x8=08
+0x9=09
+1x0=10
+1x1=11
+1x2=12
+1x3=13
+1x4=14
+1x5=15
+1x6=16
+1x7=17
+1x8=18
+1x9=19
+2x0=20
+2x1=21
+2x2=22
+2x3=23
+2x4=24
+2x5=25
+2x6=26
+2x7=27
+2x8=28
+2x9=29
+3x0=30
+3x1=31
+3x2=32
+3x3=33
+3x4=34
+3x5=35
+3x6=36
+3x7=37
+3x8=38
+3x9=39
+4x0=40
+4x1=41
+4x2=42
+4x3=43
+4x4=44
+4x5=45
+4x6=46
+4x7=47
+4x8=48
+4x9=49
+5x0=50
+5x1=51
+5x2=52
+5x3=53
+5x4=54
+5x5=55
+5x6=56
+5x7=57
+5x8=58
+5x9=59
+6x0=60
+6x1=61
+6x2=62
+6x3=63
+6x4=64
+6x5=65
+6x6=66
+6x7=67
+6x8=68
+6x9=69
+7x0=70
+7x1=71
+7x2=72
+7x3=73
+7x4=74
+7x5=75
+7x6=76
+7x7=77
+7x8=78
+7x9=79
+8x0=80
+8x1=81
+8x2=82
+8x3=83
+8x4=84
+8x5=85
+8x6=86
+8x7=87
+8x8=88
+8x9=89
+9x0=90
+9x1=91
+9x2=92
+9x3=93
+9x4=94
+9x5=95
+9x6=96
+9x7=97
+9x8=98
+9x9=99
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.java
+oef2.java:11: error: unclosed string literal
+		if(weekdag==3) System.out.println("woensdag);
+		                                  ^
+oef2.java:11: error: ';' expected
+		if(weekdag==3) System.out.println("woensdag);
+		                                             ^
+oef2.java:12: error: not a statement
+		if(weekdag==4) System.out.println("donderdag");
+		  ^
+oef2.java:12: error: ';' expected
+		if(weekdag==4) System.out.println("donderdag");
+		              ^
+4 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef1.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef1
+0x0=00
+0x1=01
+0x2=02
+0x3=03
+0x4=04
+0x5=05
+0x6=06
+0x7=07
+0x8=08
+0x9=09
+1x0=10
+1x1=11
+1x2=12
+1x3=13
+1x4=14
+1x5=15
+1x6=16
+1x7=17
+1x8=18
+1x9=19
+2x0=20
+2x1=21
+2x2=22
+2x3=23
+2x4=24
+2x5=25
+2x6=26
+2x7=27
+2x8=28
+2x9=29
+3x0=30
+3x1=31
+3x2=32
+3x3=33
+3x4=34
+3x5=35
+3x6=36
+3x7=37
+3x8=38
+3x9=39
+4x0=40
+4x1=41
+4x2=42
+4x3=43
+4x4=44
+4x5=45
+4x6=46
+4x7=47
+4x8=48
+4x9=49
+5x0=50
+5x1=51
+5x2=52
+5x3=53
+5x4=54
+5x5=55
+5x6=56
+5x7=57
+5x8=58
+5x9=59
+6x0=60
+6x1=61
+6x2=62
+6x3=63
+6x4=64
+6x5=65
+6x6=66
+6x7=67
+6x8=68
+6x9=69
+7x0=70
+7x1=71
+7x2=72
+7x3=73
+7x4=74
+7x5=75
+7x6=76
+7x7=77
+7x8=78
+7x9=79
+8x0=80
+8x1=81
+8x2=82
+8x3=83
+8x4=84
+8x5=85
+8x6=86
+8x7=87
+8x8=88
+8x9=89
+9x0=90
+9x1=91
+9x2=92
+9x3=93
+9x4=94
+9x5=95
+9x6=96
+9x7=97
+9x8=98
+9x9=99
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef1.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef1.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef1
+0x0=0
+0x1=0
+0x2=0
+0x3=0
+0x4=0
+0x5=0
+0x6=0
+0x7=0
+0x8=0
+0x9=0
+1x0=0
+1x1=1
+1x2=2
+1x3=3
+1x4=4
+1x5=5
+1x6=6
+1x7=7
+1x8=8
+1x9=9
+2x0=0
+2x1=2
+2x2=4
+2x3=6
+2x4=8
+2x5=10
+2x6=12
+2x7=14
+2x8=16
+2x9=18
+3x0=0
+3x1=3
+3x2=6
+3x3=9
+3x4=12
+3x5=15
+3x6=18
+3x7=21
+3x8=24
+3x9=27
+4x0=0
+4x1=4
+4x2=8
+4x3=12
+4x4=16
+4x5=20
+4x6=24
+4x7=28
+4x8=32
+4x9=36
+5x0=0
+5x1=5
+5x2=10
+5x3=15
+5x4=20
+5x5=25
+5x6=30
+5x7=35
+5x8=40
+5x9=45
+6x0=0
+6x1=6
+6x2=12
+6x3=18
+6x4=24
+6x5=30
+6x6=36
+6x7=42
+6x8=48
+6x9=54
+7x0=0
+7x1=7
+7x2=14
+7x3=21
+7x4=28
+7x5=35
+7x6=42
+7x7=49
+7x8=56
+7x9=63
+8x0=0
+8x1=8
+8x2=16
+8x3=24
+8x4=32
+8x5=40
+8x6=48
+8x7=56
+8x8=64
+8x9=72
+9x0=0
+9x1=9
+9x2=18
+9x3=27
+9x4=36
+9x5=45
+9x6=54
+9x7=63
+9x8=72
+9x9=81
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.java
+oef2.java:11: error: unclosed string literal
+		if(weekdag==3) System.out.println("woensdag);
+		                                  ^
+oef2.java:11: error: ';' expected
+		if(weekdag==3) System.out.println("woensdag);
+		                                             ^
+oef2.java:12: error: not a statement
+		if(weekdag==4) System.out.println("donderdag");
+		  ^
+oef2.java:12: error: ';' expected
+		if(weekdag==4) System.out.println("donderdag");
+		              ^
+4 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.java
+oef2.java:11: error: unclosed string literal
+		if(weekdag==3) System.out.println("woensdag);
+		                                  ^
+oef2.java:11: error: ';' expected
+		if(weekdag==3) System.out.println("woensdag);
+		                                             ^
+oef2.java:12: error: not a statement
+		if(weekdag==4) System.out.println("donderdag");
+		  ^
+oef2.java:12: error: ';' expected
+		if(weekdag==4) System.out.println("donderdag");
+		              ^
+4 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.jaca
+error: Class names, 'oef2.jaca', are only accepted if annotation processing is explicitly requested
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.java
+oef2.java:3: error: cannot find symbol
+	public static void main (Strings args[])
+	                         ^
+  symbol:   class Strings
+  location: class oef2
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef2
+zondag
+1februari 2009
+maandag
+2februari 2009
+dinsdag
+3februari 2009
+woensdag
+4februari 2009
+donderdag
+5februari 2009
+vrijdag
+6februari 2009
+zaterdag
+7februari 2009
+zondag
+8februari 2009
+maandag
+9februari 2009
+dinsdag
+10februari 2009
+woensdag
+11februari 2009
+donderdag
+12februari 2009
+vrijdag
+13februari 2009
+zaterdag
+14februari 2009
+zondag
+15februari 2009
+maandag
+16februari 2009
+dinsdag
+17februari 2009
+woensdag
+18februari 2009
+donderdag
+19februari 2009
+vrijdag
+20februari 2009
+zaterdag
+21februari 2009
+zondag
+22februari 2009
+maandag
+23februari 2009
+dinsdag
+24februari 2009
+woensdag
+25februari 2009
+donderdag
+26februari 2009
+vrijdag
+27februari 2009
+zaterdag
+28februari 2009
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef3.java
+oef3.java:5: error: <identifier> expected
+		double pi=0,0;
+		            ^
+oef3.java:9: error: ')' expected
+		pi=pi+(1,0/noemer);
+		        ^
+oef3.java:9: error: not a statement
+		pi=pi+(1,0/noemer);
+		          ^
+oef3.java:9: error: ';' expected
+		pi=pi+(1,0/noemer);
+		                 ^
+4 errors
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef3
+PI=3.1414926535900345
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef4.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef4.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef4
+-4302
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef5.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef2.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef2
+zondag1februari 2009
+maandag2februari 2009
+dinsdag3februari 2009
+woensdag4februari 2009
+donderdag5februari 2009
+vrijdag6februari 2009
+zaterdag7februari 2009
+zondag8februari 2009
+maandag9februari 2009
+dinsdag10februari 2009
+woensdag11februari 2009
+donderdag12februari 2009
+vrijdag13februari 2009
+zaterdag14februari 2009
+zondag15februari 2009
+maandag16februari 2009
+dinsdag17februari 2009
+woensdag18februari 2009
+donderdag19februari 2009
+vrijdag20februari 2009
+zaterdag21februari 2009
+zondag22februari 2009
+maandag23februari 2009
+dinsdag24februari 2009
+woensdag25februari 2009
+donderdag26februari 2009
+vrijdag27februari 2009
+zaterdag28februari 2009
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef5.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef5.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef5
+3is een priemgetal
+5is een priemgetal
+7is een priemgetal
+11is een priemgetal
+13is een priemgetal
+17is een priemgetal
+19is een priemgetal
+23is een priemgetal
+29is een priemgetal
+31is een priemgetal
+37is een priemgetal
+41is een priemgetal
+43is een priemgetal
+47is een priemgetal
+53is een priemgetal
+59is een priemgetal
+61is een priemgetal
+67is een priemgetal
+71is een priemgetal
+73is een priemgetal
+79is een priemgetal
+83is een priemgetal
+89is een priemgetal
+97is een priemgetal
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef3
+PI=3.1415426535898248
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef6.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef6.java
+oef6.java:5: error: ';' expected
+		int a[] = {12,34,56,78,123,99,88}
+		                                 ^
+1 error
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef6.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef6.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef6
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 7
+	at oef6.main(oef6.java:9)
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef6.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef6
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 7
+	at oef6.main(oef6.java:9)
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef3.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef3
+PI=3.1414926535900345
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef6.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef6.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef6
+234
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ nano oef7.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ javac oef7.java
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ java oef7
+234
+123
+99
+88
+78
+56
+34
+12
+MacBook-Pro-van-Darsisi:digitalbroadcast darsisiaicha$ 
